@@ -57,7 +57,7 @@ class ViewController: UIViewController {
                 if (letters[index] == Character(myLetter)){
                     displayLetter(letterIndex: index, letterToShow: myLetter)
                     sender.backgroundColor = .green
-                    correctGuess()
+                    
                 }
             }
         } else {
@@ -74,8 +74,11 @@ class ViewController: UIViewController {
         lossesCount.text = String(losses)
         
         misses = 0
+        hits = 0
+        
         chosenWord = words.randomElement()!
         letters = Array(chosenWord)
+        
         letterOne.text = "_"
         letterTwo.text = "_"
         letterThree.text = "_"
@@ -90,6 +93,7 @@ class ViewController: UIViewController {
     }
     
     private func displayLetter(letterIndex: Int, letterToShow: String){
+        correctGuess()
         switch(letterIndex){
         case 0:
             letterOne.text = letterToShow

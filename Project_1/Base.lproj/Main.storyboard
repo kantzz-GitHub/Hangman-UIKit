@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hangman" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2P-vx-aQk">
-                                <rect key="frame" x="131.66666666666666" y="428" width="129.99999999999997" height="37"/>
+                                <rect key="frame" x="131.66666666666663" y="428" width="130" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="KO5-Pr-iui"/>
                                     <constraint firstAttribute="width" constant="130" id="sTf-nV-WwJ"/>
@@ -75,7 +75,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="jMd-72-tU6" userLabel="top">
-                                <rect key="frame" x="11.333333333333343" y="676" width="370.33333333333326" height="34.333333333333371"/>
+                                <rect key="frame" x="11.333333333333371" y="676" width="370.33333333333326" height="34.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szJ-N8-BNZ" userLabel="Q">
                                         <rect key="frame" x="0.0" y="0.0" width="37" height="34.333333333333336"/>
@@ -283,7 +283,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="AcV-ta-bEb" userLabel="bottom">
-                                <rect key="frame" x="64.666666666666657" y="760" width="263.66666666666674" height="34.333333333333371"/>
+                                <rect key="frame" x="64.666666666666629" y="760" width="263.66666666666674" height="34.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20v-Ye-XQs" userLabel="Z">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="34.333333333333336"/>
@@ -420,15 +420,35 @@
                                     <constraint firstAttribute="width" constant="361.32999999999998" id="nfN-vb-6aw"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MG6-94-BJA">
+                                <rect key="frame" x="157" y="632.66666666666663" width="79" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="GhN-9Q-IXl"/>
+                                    <constraint firstAttribute="height" constant="35" id="YCr-FH-JT2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Restart">
+                                    <backgroundConfiguration key="background" cornerRadius="13">
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="restartBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5bc-Ce-sda"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="I4j-II-As6" firstAttribute="top" secondItem="c67-vJ-fIq" secondAttribute="bottom" constant="55" id="2MS-JS-c4H"/>
                             <constraint firstItem="jMd-72-tU6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6tG-8P-eb7"/>
+                            <constraint firstItem="c67-vJ-fIq" firstAttribute="top" secondItem="a2P-vx-aQk" secondAttribute="bottom" constant="20" id="8e4-Uf-Zdf"/>
                             <constraint firstItem="GCm-e4-TsV" firstAttribute="leading" secondItem="Yg9-mK-xNE" secondAttribute="trailing" constant="8" id="9PE-JT-5ky"/>
+                            <constraint firstItem="MG6-94-BJA" firstAttribute="top" secondItem="I4j-II-As6" secondAttribute="bottom" constant="19" id="Dga-Vg-rRi"/>
                             <constraint firstItem="I4j-II-As6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HA4-F5-LUT"/>
                             <constraint firstItem="Yg9-mK-xNE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="I3e-gW-hKq"/>
+                            <constraint firstItem="MG6-94-BJA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JB0-fy-3tx"/>
                             <constraint firstItem="a2P-vx-aQk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KZ2-pB-QWd"/>
                             <constraint firstItem="jMd-72-tU6" firstAttribute="top" secondItem="I4j-II-As6" secondAttribute="bottom" constant="62.329999999999998" id="Nqx-g5-bk0"/>
                             <constraint firstItem="a2P-vx-aQk" firstAttribute="top" secondItem="7Vq-mZ-8pb" secondAttribute="bottom" constant="8" id="OXS-j6-OzY"/>

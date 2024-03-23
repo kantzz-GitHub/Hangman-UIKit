@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Project_1
 //
-//  Created by Shermukhammad Usmonov on 2023-10-28.
+//  Created by Shermukhammad Usmonov 2023-10-28.
 //
 
 import UIKit
@@ -21,15 +21,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var letterSeven: UILabel!
     @IBOutlet weak var letterSix: UILabel!
     @IBOutlet weak var letterFive: UILabel!
-    
-    
-    
+
     @IBOutlet var keys: [UIButton]!
-    
-    
-    
-    
-    
     
     var words: [String] = ["BALANCE", "BATTERY", "BEDROOM", "CABINET", "CAPTAIN", "CHICKEN"]
     var chosenWord: String = ""
@@ -47,6 +40,11 @@ class ViewController: UIViewController {
         newGame()
         
     }
+    
+    @IBAction func restartBtnTapped(_ sender: UIButton) {
+        newGame()
+    }
+    
     
     @IBAction func buttonPressed(_ sender: UIButton) {
 
@@ -70,6 +68,8 @@ class ViewController: UIViewController {
     }
     
     private func newGame(){
+        hangman_image.image = .start
+        
         winsCount.text = String(wins)
         lossesCount.text = String(losses)
         
@@ -148,7 +148,28 @@ class ViewController: UIViewController {
     
     private func wrongGuess(){
         misses = misses + 1
-        if misses == 7{
+
+        switch (misses){
+        case 1:
+            hangman_image.image = .missOne
+            break
+        case 2:
+            hangman_image.image = .missTwo
+            break
+        case 3:
+            hangman_image.image = .missThree
+            break
+        case 4:
+            hangman_image.image = .missFour
+            break
+        case 5:
+            hangman_image.image = .missFive
+            break
+        case 6:
+            hangman_image.image = .missSix
+            break
+        default:
+            hangman_image.image = .lose
             showAlert(win: false)
         }
     }
@@ -156,6 +177,7 @@ class ViewController: UIViewController {
     private func correctGuess(){
         hits = hits + 1
         if hits == 7{
+            hangman_image.image = .win
             showAlert(win: true)
         }
     }
